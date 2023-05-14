@@ -17,9 +17,10 @@ class Searchbar extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     if (!this.state.query.trim()) {
-      return toast.warning('please type something');
+      return toast.warning('Please type something');
     }
     this.props.onSubmit(this.state.query);
+    this.setState({ query: '' });
   };
 
   render() {
